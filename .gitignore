@@ -37,3 +37,4 @@ next-env.d.ts
 
 # Service account keys
 serviceAccountKey.json
+service-account.json
