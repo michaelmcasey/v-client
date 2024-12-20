@@ -12,6 +12,7 @@ import { notifications, type Notification } from "./data";
 import { BellIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { getBaseUrl } from "@/lib/utils/get-base-url";
 
 const Notifications = () => {
   return (
@@ -45,7 +46,7 @@ const Notifications = () => {
                   <div className="flex-none">
                     <Avatar className="h-8 w-8">
                       <AvatarImage
-                        src={`${process.env.DASHBOARD_BASE_URL}/images/avatars/${item.avatar}`}
+                        src={`${getBaseUrl()}/images/avatars/${item.avatar}`}
                       />
                       <AvatarFallback> {item.title.charAt(0)}</AvatarFallback>
                     </Avatar>

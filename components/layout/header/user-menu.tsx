@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { BadgeCheck, Bell, CreditCard, LogOut, Sparkles } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { getBaseUrl } from "@/lib/utils/get-base-url";
 
 export default function UserMenu() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function UserMenu() {
         <DropdownMenuTrigger asChild>
           <Avatar className="size-8 rounded-full">
             <AvatarImage
-              src={user.photoURL || `${process.env.DASHBOARD_BASE_URL}/images/avatars/1.png`}
+              src={user.photoURL || `${getBaseUrl()}/images/avatars/1.png`}
               alt={user.displayName || "User avatar"}
             />
             <AvatarFallback className="rounded-lg">
@@ -55,7 +56,7 @@ export default function UserMenu() {
             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage
-                  src={user.photoURL || `${process.env.DASHBOARD_BASE_URL}/images/avatars/1.png`}
+                  src={user.photoURL || `${getBaseUrl()}/images/avatars/1.png`}
                   alt={user.displayName || "User avatar"}
                 />
                 <AvatarFallback className="rounded-lg">

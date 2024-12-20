@@ -12,6 +12,7 @@ import { messages, type Message } from "./data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MailIcon } from "lucide-react";
+import { getBaseUrl } from "@/lib/utils/get-base-url";
 
 export default function Messages() {
   return (
@@ -45,7 +46,7 @@ export default function Messages() {
                   <div className="flex-none">
                     <Avatar className="h-8 w-8">
                       <AvatarImage
-                        src={`${process.env.DASHBOARD_BASE_URL}/images/avatars/${item.image}`}
+                        src={`${getBaseUrl()}/images/avatars/${item.image}`}
                       />
                       <AvatarFallback> {item.title.charAt(0)}</AvatarFallback>
                     </Avatar>

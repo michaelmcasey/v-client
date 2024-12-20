@@ -45,12 +45,32 @@ export default function RootLayout({
           data-website-id="c37edc28-ee5f-4c62-9ce3-377fa6f600a8"
         />
       ) : null}
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XQWV6PPQDV"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XQWV6PPQDV');
+            `
+          }}
+        />
+      </head>
       <body
-        className={`${inter.className} ${inter.variable} ${roboto.variable} ${montserrat.variable} ${poppins.variable} ${overpass_mono.variable}`}>
-        <ThemeProvider attribute="class" enableSystem={false}>
-          <ThemeSettingsProvider>{children}</ThemeSettingsProvider>
+        className={`${inter.variable} ${roboto.variable} ${montserrat.variable} ${poppins.variable} ${overpass_mono.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeSettingsProvider>
+            {children}
+            <Toaster />
+          </ThemeSettingsProvider>
         </ThemeProvider>
-        <Toaster />
       </body>
     </html>
   );

@@ -9,10 +9,10 @@ import { HeaderBreadcrumb } from "./breadcrumb";
 export default function Header() {
   return (
     <div className="sticky top-0 z-10 flex flex-col">
-      <header className="flex h-14 items-center gap-2 border-b bg-background px-4 lg:h-[60px]">
+      <header className="flex h-14 items-center gap-2 border-b bg-background px-4 lg:h-[56px]">
         <SidebarTrigger className="*:size-5" />
         <HeaderBreadcrumb />
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center items-center -mb-1.5">
           <Search />
         </div>
         <div className="flex items-center gap-2">

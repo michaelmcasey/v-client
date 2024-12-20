@@ -19,6 +19,20 @@ const config = {
       }
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-figtree)', 'system-ui', 'sans-serif'],
+      },
+      fontWeight: {
+        normal: '500', 
+        medium: '600',
+        semibold: '700',
+        bold: '800',
+      },
+      letterSpacing: {
+        wide: '0.025em', 
+        wider: '0.05em',
+        widest: '0.1em',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
